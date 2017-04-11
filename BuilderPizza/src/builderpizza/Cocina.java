@@ -4,8 +4,8 @@
  * MODIFICACION:
  * DESCRIPCION: Metodo Conica
  *              Construye el objeto utilizando la inferfaz Builder
- *              
- * 		
+ *
+ *
  * @param args
  * @author edzzn
  */
@@ -13,16 +13,18 @@ package builderpizza;
 
 public class Cocina {
     private ConstructorPizza constructorPizza;
-    
+
     public void contruirPizza(){
         constructorPizza.crearNuevaPizza();
         constructorPizza.buildMasa();
         constructorPizza.buildRelleno();
         constructorPizza.buildSalsa();
     }
-    
-    
-    
+
+    public Pizza getPizza(){
+      return constructorPizza.getPizza();
+    }
+
     /**
      * @return the constructorPizza
      */
@@ -36,5 +38,5 @@ public class Cocina {
     public void setConstructorPizza(ConstructorPizza constructorPizza) {
         this.constructorPizza = constructorPizza;
     }
-    
+
 }

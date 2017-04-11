@@ -1,14 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * AUTOR: 	Edisson Reinozo
+ * CREACION:	6 Abril 2017
+ * MODIFICACION:
+ * DESCRIPCION: Constructor de Pizza Hawaiana -  ContreteBuilder
+ *               Proporciona una interfaz para obtener el producto que se crea
+ *
+ * @param args
+ * @author edzzn
  */
+
 package builderpizza;
 
-/**
- *
- * @author Estudiante
- */
 public class ConstructorPizzaHawaiana extends ConstructorPizza{
 
     @Override
