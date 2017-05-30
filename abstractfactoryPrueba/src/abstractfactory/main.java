@@ -12,12 +12,12 @@
 
 package abstractfactory;
 
-public class AbstractFactory {
+public class main {
 
     public static void main(String[] args) {
 
         // Iniciamos con el constructor con los parametros: valor, Distancia, Codigo de Pais
-        Order order = new Order(500, 120, "CA");
+        Moneda order = new Moneda(500, 120, "CA");
         OrderProcessor orderProcessor = null;
         FinancialToolsFactory factory = null;
 
