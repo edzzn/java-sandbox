@@ -23,7 +23,7 @@ public class Circle extends Shape{
     
     @Override
     public void draw() {
-        drawAPI.drawCircle(5, 10, 7);
+       drawAPI.drawCircle(radius,x,y);
     }
     
 }
