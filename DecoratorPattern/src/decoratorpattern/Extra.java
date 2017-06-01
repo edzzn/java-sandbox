@@ -24,7 +24,7 @@ public abstract class Extra implements Combo{
         decoratedCombo.getValor(); 
     }
     
-    public void getDescription(){
+    public void getDescripcion(){
         decoratedCombo.getValor(); 
     }
     
