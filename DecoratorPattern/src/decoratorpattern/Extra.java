@@ -1,12 +1,16 @@
-/*
- * Extra es nuestro ComboDecorator
+/**
+ * AUTOR: 	Edisson Reinozo
+ * CREACION:	31 Mayo 2017
+ * MODIFICACION:
+ * DESCRIPCION: Clase abstracta Extra.
+ *              implementacion del decorador.
+ * 
+ * @param args
+ * @author edzzn
  */
+
 package decoratorpattern;
 
-/**
- *
- * @author Estudiante
- */
 public abstract class Extra implements Combo{
     protected Combo decoratedCombo;
 

@@ -1,14 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * AUTOR: 	Edisson Reinozo
+ * CREACION:	31 Mayo 2017
+ * MODIFICACION:
+ * DESCRIPCION: Clase concreta Completo. 
+ *              Es uno de los combos existentes.
+ * 
+ * @param args
+ * @author edzzn
  */
+
 package decoratorpattern;
 
-/**
- *
- * @author Estudiante
- */
 public class Completo implements Combo{
 
     public void getValor() {

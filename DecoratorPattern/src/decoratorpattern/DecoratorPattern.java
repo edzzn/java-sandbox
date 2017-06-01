@@ -1,13 +1,19 @@
+/**
+ * AUTOR: 	Edisson Reinozo
+ * CREACION:	31 Mayo 2017
+ * MODIFICACION:
+ * DESCRIPCION: Patron decorator: Añade funcionalidad adicional dinamicamente a un objecto.
+ *              Forma flexible de extender funcionalidad
+ *
+ *              Tambien se lo concoce como WAPPER
+ * 
+ * @param args
+ * @author edzzn
+ */
+
+
 package decoratorpattern;
 
-/**
- * Patron decorator: Añade funcionalidad adicional dinamicamente a un objecto.
- * Forma flexible de extender funcionalidad
- *
- * Tambien se lo concoce como WAPPER
- *
- * @author Estudiante
- */
 public class DecoratorPattern {
 
     public static void main(String[] args) {
