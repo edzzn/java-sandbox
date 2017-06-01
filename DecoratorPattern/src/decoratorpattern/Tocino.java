@@ -9,6 +9,31 @@ package decoratorpattern;
  *
  * @author Estudiante
  */
-public class Tocino extends Extra{
+public class Tocino extends Extra {
+
+    public Tocino(Combo decoratedCombo) {
+        super(decoratedCombo);
+    }
+
+
+    @Override
+    public void getValor() {
+        decoratedCombo.getValor();
+        setTocinoValor(decoratedCombo);
+    }
+
+    @Override
+    public void getDescripcion() {
+        decoratedCombo.getValor();
+        setTocinoDescripcion(decoratedCombo);
+    }
+
+    private void setTocinoValor(Combo decoratedCombo) {
+        System.out.println("+ Tocino: $");
+    }
     
+    private void setTocinoDescripcion(Combo decoratedCombo) {
+        System.out.println("+ Tocino");
+    }
 }
+

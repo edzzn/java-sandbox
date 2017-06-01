@@ -9,11 +9,15 @@ package decoratorpattern;
  *
  * @author Estudiante
  */
-public class Completo extends Combo{
+public class Completo implements Combo{
+
+    public void getValor() {
+        System.out.println("Valor Completo: $$");;
+    }
 
     @Override
-    public int getValor() {
-        return 5;
+    public void getDescripcion() {
+        System.out.println("Combo Completo");
     }
     
     

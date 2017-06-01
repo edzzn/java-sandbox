@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Extra es nuestro ComboDecorator
  */
 package decoratorpattern;
 
@@ -9,11 +7,21 @@ package decoratorpattern;
  *
  * @author Estudiante
  */
-public class Extra extends Combo{
+public abstract class Extra implements Combo{
+    protected Combo decoratedCombo;
 
+    public Extra(Combo decoratedCombo) {
+        this.decoratedCombo = decoratedCombo;
+    }
+ 
+    
     @Override
-    public int getValor() {
-        return 8;
+    public void getValor() {
+        decoratedCombo.getValor(); 
+    }
+    
+    public void getDescription(){
+        decoratedCombo.getValor(); 
     }
     
 }

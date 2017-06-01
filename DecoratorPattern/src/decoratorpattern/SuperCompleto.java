@@ -9,11 +9,16 @@ package decoratorpattern;
  *
  * @author Estudiante
  */
-public class SuperCompleto extends Combo{
+public class SuperCompleto implements Combo {
 
     @Override
-    public int getValor() {
-        return 6;
+    public void getValor() {
+        System.out.println("Valor SuperCompleto: $$");;
     }
-    
+
+    @Override
+    public void getDescripcion() {
+        System.out.println("Combo SuperCompleto");
+    }
+
 }

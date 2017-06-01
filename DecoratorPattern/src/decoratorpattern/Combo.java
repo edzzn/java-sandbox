@@ -5,23 +5,7 @@
  */
 package decoratorpattern;
 
-public abstract class Combo {
-    private String descripcion;
-
-    public abstract int getValor();
-    
-    /**
-     * @return the descripcion
-     */
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    /**
-     * @param descripcion the descripcion to set
-     */
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
+public interface  Combo {
+    void getValor();
+    void getDescripcion();
 }
