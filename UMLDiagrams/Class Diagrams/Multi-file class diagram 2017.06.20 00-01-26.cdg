@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="AndExpression" package="interpreterpatten" visibility="public" xPosition="39.0" yPosition="438.0">
+      <Fields>
+        <Field name="expr1" type="Expression" visibility="private"/>
+        <Field name="expr2" type="Expression" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Expression" name="expr1"/>
+          <Argument type="Expression" name="expr2"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="interpret" returnType="boolean" visibility="public">
+          <Argument type="String" name="context"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InterpreterPatternDemo" package="interpreterpatten" visibility="public" xPosition="122.0" yPosition="100.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getMaleExpression" returnType="Expression" visibility="public" isStatic="true"/>
+        <Method name="getMarriedWomanExpression" returnType="Expression" visibility="public" isStatic="true"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OrExpression" package="interpreterpatten" visibility="public" xPosition="472.0" yPosition="438.0">
+      <Fields>
+        <Field name="expr1" type="Expression" visibility="private"/>
+        <Field name="expr2" type="Expression" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Expression" name="expr1"/>
+          <Argument type="Expression" name="expr2"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="interpret" returnType="boolean" visibility="public">
+          <Argument type="String" name="context"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TerminalExpression" package="interpreterpatten" visibility="public" xPosition="538.0" yPosition="100.0">
+      <Fields>
+        <Field name="data" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="data"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="interpret" returnType="boolean" visibility="public">
+          <Argument type="String" name="context"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Expression" package="interpreterpatten" visibility="public" xPosition="306.0" yPosition="272.0">
+      <Methods>
+        <Method name="interpret" returnType="boolean" visibility="public">
+          <Argument type="String" name="context"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="expr1" source="interpreterpatten.OrExpression" target="interpreterpatten.Expression" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="expr2" source="interpreterpatten.OrExpression" target="interpreterpatten.Expression" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="interpreterpatten.InterpreterPatternDemo" target="interpreterpatten.Expression" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="expr1" source="interpreterpatten.AndExpression" target="interpreterpatten.Expression" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="expr2" source="interpreterpatten.AndExpression" target="interpreterpatten.Expression" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="interpreterpatten.TerminalExpression" target="interpreterpatten.Expression"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="interpreterpatten.OrExpression" target="interpreterpatten.Expression"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="interpreterpatten.AndExpression" target="interpreterpatten.Expression"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
