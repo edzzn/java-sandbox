@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="CompositePattern" package="compositepattern" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DiscJockey" package="compositepattern" visibility="public" xPosition="241.0" yPosition="145.0">
+      <Fields>
+        <Field name="songList" type="SongComponent" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="SongComponent" name="newSongList"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSongList" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Song" package="compositepattern" visibility="public" xPosition="266.0" yPosition="373.0">
+      <Fields>
+        <Field name="songName" type="String" visibility="private"/>
+        <Field name="bandName" type="String" visibility="private"/>
+        <Field name="releaseYear" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="songName"/>
+          <Argument type="String" name="bandName"/>
+          <Argument type="int" name="realeaseYear"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="displaySongInfo" returnType="void" visibility="public"/>
+        <Method name="getSongName" returnType="String" visibility="public"/>
+        <Method name="setSongName" returnType="void" visibility="public">
+          <Argument type="String" name="songName"/>
+        </Method>
+        <Method name="getBandName" returnType="String" visibility="public"/>
+        <Method name="setBandName" returnType="void" visibility="public">
+          <Argument type="String" name="bandName"/>
+        </Method>
+        <Method name="getReleaseYear" returnType="int" visibility="public"/>
+        <Method name="setRealeaseYear" returnType="void" visibility="public">
+          <Argument type="int" name="realeaseYear"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SongComponent" package="compositepattern" visibility="public" isAbstract="true" xPosition="665.0" yPosition="90.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="SongComponent" name="newSongComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="SongComponent" name="newSongComponent"/>
+        </Method>
+        <Method name="getComponent" returnType="SongComponent" visibility="public">
+          <Argument type="int" name="componentIndex"/>
+        </Method>
+        <Method name="getSongName" returnType="String" visibility="public">
+          <Argument type="int" name="componentIndex"/>
+        </Method>
+        <Method name="getBandName" returnType="SongComponent" visibility="public">
+          <Argument type="int" name="componentIndex"/>
+        </Method>
+        <Method name="getRealeaseYear" returnType="int" visibility="public">
+          <Argument type="int" name="componentIndex"/>
+        </Method>
+        <Method name="displaySongInfo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SongGroup" package="compositepattern" visibility="public" xPosition="768.0" yPosition="390.0">
+      <Fields>
+        <Field name="songComponents" type="ArrayList" visibility="package"/>
+        <Field name="groupName" type="String" visibility="package"/>
+        <Field name="groupDescription" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="groupName"/>
+          <Argument type="String" name="groupDescription"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getGroupName" returnType="String" visibility="public"/>
+        <Method name="getGroupDescription" returnType="String" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="SongComponent" name="newSongComponent"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="SongComponent" name="newSongComponent"/>
+        </Method>
+        <Method name="getSongComponent" returnType="SongComponent" visibility="public">
+          <Argument type="int" name="componentIndex"/>
+        </Method>
+        <Method name="displaySongInfo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="songList" source="compositepattern.DiscJockey" target="compositepattern.SongComponent" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="compositepattern.SongGroup" target="compositepattern.SongComponent"/>
+    <IsRelation name="is" source="compositepattern.Song" target="compositepattern.SongComponent"/>
+    <UseRelation source="compositepattern.SongComponent" target="compositepattern.SongComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="compositepattern.SongGroup" target="compositepattern.SongComponent" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

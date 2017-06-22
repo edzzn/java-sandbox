@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="decoratorpattern">
+  <ClassDiagramComponents>
+    <Class name="Tocino" package="decoratorpattern" visibility="public" xPosition="449.0" yPosition="440.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Combo" name="decoratedCombo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getValor" returnType="void" visibility="public"/>
+        <Method name="getDescripcion" returnType="void" visibility="public"/>
+        <Method name="setTocinoValor" returnType="void" visibility="private">
+          <Argument type="Combo" name="decoratedCombo"/>
+        </Method>
+        <Method name="setTocinoDescripcion" returnType="void" visibility="private">
+          <Argument type="Combo" name="decoratedCombo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Basico" package="decoratorpattern" visibility="public" xPosition="881.0" yPosition="505.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getValor" returnType="void" visibility="public"/>
+        <Method name="getDescripcion" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Completo" package="decoratorpattern" visibility="public" xPosition="940.0" yPosition="32.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getValor" returnType="void" visibility="public"/>
+        <Method name="getDescripcion" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Queso" package="decoratorpattern" visibility="public" xPosition="437.0" yPosition="-19.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Combo" name="decoratedCombo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getValor" returnType="void" visibility="public"/>
+        <Method name="getDescripcion" returnType="void" visibility="public"/>
+        <Method name="setQuesoValor" returnType="void" visibility="private">
+          <Argument type="Combo" name="decoratedCombo"/>
+        </Method>
+        <Method name="setQuesoDescripcion" returnType="void" visibility="private">
+          <Argument type="Combo" name="decoratedCombo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SuperCompleto" package="decoratorpattern" visibility="public" xPosition="1131.0" yPosition="516.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getValor" returnType="void" visibility="public"/>
+        <Method name="getDescripcion" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DecoratorPattern" package="decoratorpattern" visibility="public" xPosition="-2.0" yPosition="321.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Extra" package="decoratorpattern" visibility="public" isAbstract="true" xPosition="449.0" yPosition="189.0">
+      <Fields>
+        <Field name="decoratedCombo" type="Combo" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Combo" name="decoratedCombo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getValor" returnType="void" visibility="public"/>
+        <Method name="getDescripcion" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Combo" package="decoratorpattern" visibility="public" xPosition="940.0" yPosition="250.0">
+      <Methods>
+        <Method name="getValor" returnType="void" visibility="package"/>
+        <Method name="getDescripcion" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="decoratorpattern.Extra" target="decoratorpattern.Combo"/>
+    <HasRelation name="decoratedCombo" source="decoratorpattern.Extra" target="decoratorpattern.Combo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="decoratorpattern.SuperCompleto" target="decoratorpattern.Combo"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="decoratorpattern.Basico" target="decoratorpattern.Combo"/>
+    <UseRelation source="decoratorpattern.Queso" target="decoratorpattern.Combo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="decoratorpattern.Queso" target="decoratorpattern.Extra"/>
+    <IsRelation name="is" source="decoratorpattern.Tocino" target="decoratorpattern.Extra"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="decoratorpattern.Completo" target="decoratorpattern.Combo"/>
+    <UseRelation source="decoratorpattern.Tocino" target="decoratorpattern.Combo" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

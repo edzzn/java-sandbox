@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="BridgeMethod" package="bridgemethod" visibility="public" xPosition="34.0" yPosition="175.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Circle" package="bridgemethod" visibility="public" xPosition="268.0" yPosition="323.0">
+      <Fields>
+        <Field name="x" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="radius"/>
+          <Argument type="IDrawAPI" name="drawAPI"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GreenCircle" package="bridgemethod" visibility="public" xPosition="608.0" yPosition="340.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="drawCircle" returnType="void" visibility="public">
+          <Argument type="int" name="radius"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RedCircle" package="bridgemethod" visibility="public" xPosition="894.0" yPosition="340.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="drawCircle" returnType="void" visibility="public">
+          <Argument type="int" name="radius"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Shape" package="bridgemethod" visibility="public" isAbstract="true" xPosition="332.0" yPosition="83.0">
+      <Fields>
+        <Field name="drawAPI" type="IDrawAPI" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="protected">
+          <Argument type="IDrawAPI" name="drawAPI"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Interface name="IDrawAPI" package="bridgemethod" visibility="public" xPosition="743.0" yPosition="113.0">
+      <Methods>
+        <Method name="drawCircle" returnType="void" visibility="public">
+          <Argument type="int" name="radius"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="bridgemethod.Circle" target="bridgemethod.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="bridgemethod.RedCircle" target="bridgemethod.IDrawAPI"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="bridgemethod.GreenCircle" target="bridgemethod.IDrawAPI"/>
+    <HasRelation name="drawAPI" source="bridgemethod.Shape" target="bridgemethod.IDrawAPI" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

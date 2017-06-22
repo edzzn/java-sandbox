@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="AdapterDesingPatter" package="adapterdesingpatter" visibility="public" xPosition="13.0" yPosition="118.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AudioPlayer" package="adapterdesingpatter" visibility="public" xPosition="165.0" yPosition="244.0">
+      <Fields>
+        <Field name="mediaAdapter" type="MediaAdapter" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="play" returnType="void" visibility="public">
+          <Argument type="String" name="audioType"/>
+          <Argument type="String" name="filename"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MediaAdapter" package="adapterdesingpatter" visibility="public" xPosition="616.0" yPosition="244.0">
+      <Fields>
+        <Field name="advancedMusicPlayer" type="AdvancedMediaPlayer" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="audioType"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="play" returnType="void" visibility="public">
+          <Argument type="String" name="audioType"/>
+          <Argument type="String" name="filename"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Mp4Player" package="adapterdesingpatter" visibility="public" xPosition="856.0" yPosition="543.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="playVlc" returnType="void" visibility="public">
+          <Argument type="String" name="filename"/>
+        </Method>
+        <Method name="playMp4" returnType="void" visibility="public">
+          <Argument type="String" name="filename"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VlcPlayer" package="adapterdesingpatter" visibility="public" xPosition="391.0" yPosition="543.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="playVlc" returnType="void" visibility="public">
+          <Argument type="String" name="filename"/>
+        </Method>
+        <Method name="playMp4" returnType="void" visibility="public">
+          <Argument type="String" name="filename"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="AdvancedMediaPlayer" package="adapterdesingpatter" visibility="public" xPosition="661.0" yPosition="413.0">
+      <Methods>
+        <Method name="playVlc" returnType="void" visibility="public">
+          <Argument type="String" name="filename"/>
+        </Method>
+        <Method name="playMp4" returnType="void" visibility="public">
+          <Argument type="String" name="filename"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="MediaPlayer" package="adapterdesingpatter" visibility="public" xPosition="448.0" yPosition="44.0">
+      <Methods>
+        <Method name="play" returnType="void" visibility="public">
+          <Argument type="String" name="audioType"/>
+          <Argument type="String" name="filename"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="mediaAdapter" source="adapterdesingpatter.AudioPlayer" target="adapterdesingpatter.MediaAdapter" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="adapterdesingpatter.Mp4Player" target="adapterdesingpatter.AdvancedMediaPlayer"/>
+    <HasRelation name="advancedMusicPlayer" source="adapterdesingpatter.MediaAdapter" target="adapterdesingpatter.AdvancedMediaPlayer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="adapterdesingpatter.VlcPlayer" target="adapterdesingpatter.AdvancedMediaPlayer"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="adapterdesingpatter.AudioPlayer" target="adapterdesingpatter.MediaPlayer"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="adapterdesingpatter.MediaAdapter" target="adapterdesingpatter.MediaPlayer"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

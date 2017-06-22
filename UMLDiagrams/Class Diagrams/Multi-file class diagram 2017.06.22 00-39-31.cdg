@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Graphic" package="compositegraphics" visibility="public" isAbstract="true" xPosition="340.0" yPosition="89.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="Graphic" name="grafico"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="Graphic" name="grafico"/>
+        </Method>
+        <Method name="getChild" returnType="Graphic" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Line" package="compositegraphics" visibility="public" xPosition="166.0" yPosition="409.0">
+      <Fields>
+        <Field name="lineLenght" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="lineLenght"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="compositegraphics" visibility="public" xPosition="-32.0" yPosition="56.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Picture" package="compositegraphics" visibility="public" xPosition="956.0" yPosition="88.0">
+      <Fields>
+        <Field name="graphics" type="ArrayList" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="Graphic" name="g"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="Graphic" name="g"/>
+        </Method>
+        <Method name="getChild" returnType="Graphic" visibility="public">
+          <Argument type="int" name="indexChild"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Rectangle" package="compositegraphics" visibility="public" xPosition="577.0" yPosition="461.0">
+      <Fields>
+        <Field name="base" type="int" visibility="package"/>
+        <Field name="altura" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="base"/>
+          <Argument type="int" name="altura"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Text" package="compositegraphics" visibility="public" xPosition="368.0" yPosition="428.0">
+      <Fields>
+        <Field name="text" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="text"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="compositegraphics.Picture" target="compositegraphics.Graphic"/>
+    <IsRelation name="is" source="compositegraphics.Line" target="compositegraphics.Graphic"/>
+    <UseRelation source="compositegraphics.Graphic" target="compositegraphics.Graphic" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="compositegraphics.Text" target="compositegraphics.Graphic"/>
+    <UseRelation source="compositegraphics.Picture" target="compositegraphics.Graphic" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="compositegraphics.Rectangle" target="compositegraphics.Graphic"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -13,8 +13,8 @@ package flyweightdemo;
 
 public class Toyota implements Vehiculo {
 
-    private String marca;
-    private String modelo;
+    private String marca = "Toyota";
+    private String modelo = "Yaris";
     private String color;
     private String placa;
 
@@ -26,40 +26,13 @@ public class Toyota implements Vehiculo {
 
     @Override
     public void mostrarVehiculo() {
-        System.out.println("Marca: " + this.getMarca());
-        System.out.println("Modelo: " + this.getModelo());
+        System.out.println("Marca: " + this.marca);
+        System.out.println("Modelo: " + this.modelo);
         System.out.println("Color: " + this.getColor());
         System.out.println("Placa: " + this.getPlaca());
 
     }
 
-    /**
-     * @return the marca
-     */
-    public String getMarca() {
-        return marca;
-    }
-
-    /**
-     * @param marca the marca to set
-     */
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    /**
-     * @return the modelo
-     */
-    public String getModelo() {
-        return modelo;
-    }
-
-    /**
-     * @param modelo the modelo to set
-     */
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
 
     /**
      * @return the color

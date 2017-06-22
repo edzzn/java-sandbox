@@ -12,7 +12,7 @@
  */
 package adapterdesingpatter;
 
-public class MediaAdapter implements MediaPlayer{
+public class MediaAdapter implements IMediaPlayer{
     AdvancedMediaPlayer advancedMusicPlayer;
     
     public MediaAdapter(String audioType){

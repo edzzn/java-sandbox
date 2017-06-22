@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="flyweightdemo">
+  <ClassDiagramComponents>
+    <Class name="FlyweightDemo" package="flyweightdemo" visibility="public" xPosition="24.0" yPosition="78.0">
+      <Fields>
+        <Field name="colores" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="getRandomColor" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="getRandomPlaca" returnType="String" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="VehiculoFactory" package="flyweightdemo" visibility="public" xPosition="345.0" yPosition="95.0">
+      <Fields>
+        <Field name="toyotaMap" type="HashMap&lt;String, Vehiculo&gt;" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getToyota" returnType="Vehiculo" visibility="public" isStatic="true">
+          <Argument type="String" name="color"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Toyota" package="flyweightdemo" visibility="public" xPosition="806.0" yPosition="149.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+        <Field name="placa" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="color"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mostrarVehiculo" returnType="void" visibility="public"/>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getColor" returnType="String" visibility="public"/>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="getPlaca" returnType="String" visibility="public"/>
+        <Method name="setPlaca" returnType="void" visibility="public">
+          <Argument type="String" name="placa"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Vehiculo" package="flyweightdemo" visibility="public" xPosition="392.0" yPosition="333.0">
+      <Methods>
+        <Method name="mostrarVehiculo" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="toyotaMap" source="flyweightdemo.VehiculoFactory" target="flyweightdemo.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashMap&lt;String, Vehiculo&gt;"/>
+    <UseRelation source="flyweightdemo.VehiculoFactory" target="flyweightdemo.Vehiculo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="flyweightdemo.Toyota" target="flyweightdemo.Vehiculo"/>
+    <UseRelation name="" source="flyweightdemo.FlyweightDemo" target="flyweightdemo.VehiculoFactory" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

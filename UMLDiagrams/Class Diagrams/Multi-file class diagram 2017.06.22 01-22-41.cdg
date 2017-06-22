@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="BlueShapeDecorator" package="decoratordemo" visibility="public" xPosition="557.0" yPosition="390.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Shape" name="decoratedShape"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+        <Method name="setBlueBoder" returnType="void" visibility="public">
+          <Argument type="Shape" name="decoratedShape"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Circle" package="decoratordemo" visibility="public" xPosition="257.0" yPosition="449.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DecoratorDemo" package="decoratordemo" visibility="public" xPosition="4.0" yPosition="38.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Rectangle" package="decoratordemo" visibility="public" xPosition="51.0" yPosition="337.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RedShapeDecorator" package="decoratordemo" visibility="public" xPosition="982.0" yPosition="390.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Shape" name="decoratedShape"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+        <Method name="setRedBorder" returnType="void" visibility="public">
+          <Argument type="Shape" name="decoratedShape"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ShapeDecorator" package="decoratordemo" visibility="public" isAbstract="true" xPosition="669.0" yPosition="52.0">
+      <Fields>
+        <Field name="decoratedShape" type="Shape" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Shape" name="shapeDecorator"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Shape" package="decoratordemo" visibility="public" xPosition="308.0" yPosition="82.0">
+      <Methods>
+        <Method name="draw" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="decoratordemo.BlueShapeDecorator" target="decoratordemo.ShapeDecorator"/>
+    <HasRelation name="decoratedShape" source="decoratordemo.ShapeDecorator" target="decoratordemo.Shape" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="decoratordemo.ShapeDecorator" target="decoratordemo.Shape"/>
+    <IsRelation name="is" source="decoratordemo.RedShapeDecorator" target="decoratordemo.ShapeDecorator"/>
+    <UseRelation source="decoratordemo.RedShapeDecorator" target="decoratordemo.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="decoratordemo.Rectangle" target="decoratordemo.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="decoratordemo.Circle" target="decoratordemo.Shape"/>
+    <UseRelation source="decoratordemo.BlueShapeDecorator" target="decoratordemo.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

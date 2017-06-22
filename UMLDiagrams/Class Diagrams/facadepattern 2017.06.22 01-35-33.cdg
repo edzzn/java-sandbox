@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="facadepattern">
+  <ClassDiagramComponents>
+    <Class name="Square" package="facadepattern" visibility="public" xPosition="927.0" yPosition="380.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FacadePattern" package="facadepattern" visibility="public" xPosition="27.0" yPosition="122.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Rectangle" package="facadepattern" visibility="public" xPosition="686.0" yPosition="380.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FacadeShape" package="facadepattern" visibility="public" xPosition="350.0" yPosition="87.0">
+      <Fields>
+        <Field name="circle" type="Shape" visibility="private"/>
+        <Field name="rectangle" type="Shape" visibility="private"/>
+        <Field name="square" type="Shape" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="drawCircle" returnType="void" visibility="public"/>
+        <Method name="drawSquare" returnType="void" visibility="public"/>
+        <Method name="drawRectangle" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Circle" package="facadepattern" visibility="public" xPosition="440.0" yPosition="380.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Shape" package="facadepattern" visibility="public" xPosition="620.0" yPosition="128.0">
+      <Methods>
+        <Method name="draw" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="circle" source="facadepattern.FacadeShape" target="facadepattern.Shape" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="rectangle" source="facadepattern.FacadeShape" target="facadepattern.Shape" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="square" source="facadepattern.FacadeShape" target="facadepattern.Shape" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="facadepattern.Circle" target="facadepattern.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="facadepattern.Rectangle" target="facadepattern.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="facadepattern.Square" target="facadepattern.Shape"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

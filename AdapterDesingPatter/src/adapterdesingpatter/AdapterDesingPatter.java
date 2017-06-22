@@ -18,10 +18,10 @@ public class AdapterDesingPatter {
      */
     public static void main(String[] args) {
         AudioPlayer audioPlayer = new AudioPlayer();
-        audioPlayer.play("mp3", "file!");
-        audioPlayer.play("mp4", "file!");
-        audioPlayer.play("vlc", "file!");
-        audioPlayer.play("mp5", "file!");
+        audioPlayer.play("mp3", "file.mp3");
+        audioPlayer.play("mp4", "file.mp4");
+        audioPlayer.play("vlc", "file.vlc");
+        audioPlayer.play("mp5", "file.vlc");
 
     }
 
