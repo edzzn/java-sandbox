@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Comando" package="SGBD_LCE_UC.capa.logica" visibility="public" xPosition="520.0" yPosition="444.0">
+      <Fields>
+        <Field name="comando" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="crearT"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mostrarComando" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GestionRegistros" package="SGBD_LCE_UC.capa.logica" visibility="public" xPosition="204.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombreTabla" type="String" visibility="package"/>
+        <Field name="campos" type="ArrayList&lt;String&gt;" visibility="package"/>
+        <Field name="valoresCampos" type="ArrayList&lt;String&gt;" visibility="package"/>
+        <Field name="fileMETA" type="String" visibility="package"/>
+        <Field name="nombreCampo" type="String" visibility="package"/>
+        <Field name="valorCampo" type="String" visibility="package"/>
+        <Field name="posicionCampoClave" type="int" visibility="private"/>
+        <Field name="valorCampoClave" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreTabla"/>
+          <Argument type="ArrayList&lt;String&gt;" name="valoresCampos"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreTabla"/>
+          <Argument type="String" name="campoClave"/>
+          <Argument type="String" name="nombreCampo"/>
+          <Argument type="String" name="valorCampo"/>
+          <Argument type="int" name="posicionCampoClave"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreTabla"/>
+          <Argument type="String" name="valorCampoClave"/>
+          <Argument type="int" name="posicionCampoClave"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="crearRegistros" returnType="void" visibility="public"/>
+        <Method name="modificarRegistros" returnType="void" visibility="public"/>
+        <Method name="eliminarRegistros" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GestionTablas" package="SGBD_LCE_UC.capa.logica" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombreTabla" type="String" visibility="package"/>
+        <Field name="campos" type="ArrayList&lt;String&gt;" visibility="package"/>
+        <Field name="longitudCampos" type="ArrayList&lt;String&gt;" visibility="package"/>
+        <Field name="camposEncriptados" type="ArrayList&lt;String&gt;" visibility="package"/>
+        <Field name="camposEncriptadosTF" type="ArrayList&lt;String&gt;" visibility="package"/>
+        <Field name="fileMETA" type="String" visibility="package"/>
+        <Field name="nombreCampo" type="String" visibility="private"/>
+        <Field name="nuevoCampo" type="String" visibility="private"/>
+        <Field name="posCampo" type="int" visibility="private"/>
+        <Field name="numCamposLeidos" type="int" visibility="private"/>
+        <Field name="valCampos" type="ArrayList&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreTabla"/>
+          <Argument type="ArrayList&lt;String&gt;" name="campos"/>
+          <Argument type="String" name="campoClave"/>
+          <Argument type="ArrayList&lt;String&gt;" name="longitudCampos"/>
+          <Argument type="ArrayList&lt;String&gt;" name="camposEncriptados"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreTabla"/>
+          <Argument type="ArrayList&lt;String&gt;" name="campos"/>
+          <Argument type="String" name="campoClave"/>
+          <Argument type="ArrayList&lt;String&gt;" name="longitudCampos"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreTabla"/>
+          <Argument type="String" name="nombreCampo"/>
+          <Argument type="String" name="nuevoCampo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreTabla"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="crearTabla" returnType="void" visibility="public"/>
+        <Method name="modificarTabla" returnType="void" visibility="public"/>
+        <Method name="eliminarTabla" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GestorDB" package="SGBD_LCE_UC.capa.logica" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="mensaje" type="Mensaje" visibility="package"/>
+        <Field name="instance" type="GestorDB" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="protected"/>
+      </Constructors>
+      <Methods>
+        <Method name="getGestor" returnType="GestorDB" visibility="public" isStatic="true"/>
+        <Method name="operar" returnType="void" visibility="public">
+          <Argument type="Object[]" name="comando"/>
+          <Argument type="int" name="operacion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GestorDBAdapter" package="SGBD_LCE_UC.capa.logica" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="gestor" type="GestorDB" visibility="private"/>
+        <Field name="comando" type="String" visibility="private"/>
+        <Field name="comandoParsed" type="Object[]" visibility="private"/>
+        <Field name="instance" type="GestorDBAdapter" visibility="private" isStatic="true"/>
+        <Field name="operacion" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="protected"/>
+      </Constructors>
+      <Methods>
+        <Method name="getGestor" returnType="GestorDBAdapter" visibility="public" isStatic="true"/>
+        <Method name="BuscarTabla" returnType="boolean" visibility="private">
+          <Argument type="String" name="nombreTabla"/>
+        </Method>
+        <Method name="operar" returnType="void" visibility="public">
+          <Argument type="String" name="comando"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Parser" package="SGBD_LCE_UC.capa.logica" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="operacion" type="int" visibility="private"/>
+        <Field name="comando" type="Object[]" visibility="private"/>
+        <Field name="codigo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="codigo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="argv"/>
+        </Method>
+        <Method name="crearTabla" returnType="Object[]" visibility="public">
+          <Argument type="String" name="comando"/>
+        </Method>
+        <Method name="modificarTabla" returnType="Object[]" visibility="public">
+          <Argument type="String" name="comando"/>
+        </Method>
+        <Method name="eliminarTabla" returnType="Object[]" visibility="public">
+          <Argument type="String" name="comando"/>
+        </Method>
+        <Method name="crearRegistro" returnType="Object[]" visibility="public">
+          <Argument type="String" name="comando"/>
+        </Method>
+        <Method name="modificarRegistro" returnType="Object[]" visibility="public">
+          <Argument type="String" name="comando"/>
+        </Method>
+        <Method name="eliminarRegistro" returnType="Object[]" visibility="public">
+          <Argument type="String" name="comando"/>
+        </Method>
+        <Method name="seleccionarRegistro" returnType="Object[]" visibility="public">
+          <Argument type="String" name="comando"/>
+        </Method>
+        <Method name="unirTabla" returnType="Object[]" visibility="public">
+          <Argument type="String" name="comando"/>
+        </Method>
+        <Method name="getOperacionString" returnType="int" visibility="private">
+          <Argument type="String" name="codigo"/>
+        </Method>
+        <Method name="parserizar" returnType="void" visibility="private">
+          <Argument type="int" name="operacion"/>
+          <Argument type="String" name="codigo"/>
+        </Method>
+        <Method name="getComando" returnType="Object[]" visibility="public"/>
+        <Method name="getOperacion" returnType="int" visibility="public"/>
+        <Method name="mostrarArray" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Object[]" name="arr"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Script" package="SGBD_LCE_UC.capa.logica" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public">
+          <Argument type="String[]" name="argv"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Seleccionar" package="SGBD_LCE_UC.capa.logica" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombreTabla" type="String" visibility="package"/>
+        <Field name="nombreCampo" type="String" visibility="package"/>
+        <Field name="valorCampo" type="String" visibility="package"/>
+        <Field name="ordenamiento" type="String" visibility="package"/>
+        <Field name="numElementosMostrar" type="int" visibility="package"/>
+        <Field name="posicion" type="int" visibility="package"/>
+        <Field name="comando" type="Object[]" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Object[]" name="comando"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="operar" returnType="void" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="TEA" package="SGBD_LCE_UC.capa.logica" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="SUGAR" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="CUPS" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="UNSUGAR" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="S" type="int[]" visibility="private"/>
+        <Field name="quote" type="String" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="byte[]" name="key"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="encrypt" returnType="byte[]" visibility="public">
+          <Argument type="byte[]" name="clear"/>
+        </Method>
+        <Method name="decrypt" returnType="byte[]" visibility="public">
+          <Argument type="byte[]" name="crypt"/>
+        </Method>
+        <Method name="brew" returnType="void" visibility="package">
+          <Argument type="int[]" name="buf"/>
+        </Method>
+        <Method name="unbrew" returnType="void" visibility="package">
+          <Argument type="int[]" name="buf"/>
+        </Method>
+        <Method name="pack" returnType="void" visibility="package">
+          <Argument type="byte[]" name="src"/>
+          <Argument type="int[]" name="dest"/>
+          <Argument type="int" name="destOffset"/>
+        </Method>
+        <Method name="unpack" returnType="byte[]" visibility="package">
+          <Argument type="int[]" name="src"/>
+          <Argument type="int" name="srcOffset"/>
+          <Argument type="int" name="destLength"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TEST_GestionRegistros" package="SGBD_LCE_UC.capa.logica" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="instance" source="SGBD_LCE_UC.capa.logica.GestorDB" target="SGBD_LCE_UC.capa.logica.GestorDB" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="SGBD_LCE_UC.capa.logica.GestorDB" target="SGBD_LCE_UC.capa.logica.GestorDB" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instance" source="SGBD_LCE_UC.capa.logica.GestorDBAdapter" target="SGBD_LCE_UC.capa.logica.GestorDBAdapter" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gestor" source="SGBD_LCE_UC.capa.logica.GestorDBAdapter" target="SGBD_LCE_UC.capa.logica.GestorDB" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="SGBD_LCE_UC.capa.logica.GestorDBAdapter" target="SGBD_LCE_UC.capa.logica.GestorDBAdapter" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

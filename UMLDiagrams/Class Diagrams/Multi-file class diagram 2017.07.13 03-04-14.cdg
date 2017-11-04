@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="AbstractLogger" package="chainofresponsibilitydemo" visibility="public" isAbstract="true" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="INFO" type="int" visibility="public" isStatic="true"/>
+        <Field name="DEBUG" type="int" visibility="public" isStatic="true"/>
+        <Field name="ERROR" type="int" visibility="public" isStatic="true"/>
+        <Field name="level" type="int" visibility="protected"/>
+        <Field name="nextLogger" type="AbstractLogger" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setNextLogger" returnType="void" visibility="public">
+          <Argument type="AbstractLogger" name="nextLogger"/>
+        </Method>
+        <Method name="logMessage" returnType="void" visibility="public">
+          <Argument type="int" name="level"/>
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="write" returnType="void" visibility="protected" isAbstract="true">
+          <Argument type="String" name="message"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ChainPatternDemo" package="chainofresponsibilitydemo" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getChainOfLoggers" returnType="AbstractLogger" visibility="private" isStatic="true"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ConsoleLogger" package="chainofresponsibilitydemo" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="level"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="write" returnType="void" visibility="protected">
+          <Argument type="String" name="message"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ErrorLogger" package="chainofresponsibilitydemo" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="level"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="write" returnType="void" visibility="protected">
+          <Argument type="String" name="message"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FileLogger" package="chainofresponsibilitydemo" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="level"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="write" returnType="void" visibility="protected">
+          <Argument type="String" name="message"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="chainofresponsibilitydemo.ErrorLogger" target="chainofresponsibilitydemo.AbstractLogger"/>
+    <UseRelation source="chainofresponsibilitydemo.ChainPatternDemo" target="chainofresponsibilitydemo.AbstractLogger" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="chainofresponsibilitydemo.FileLogger" target="chainofresponsibilitydemo.AbstractLogger"/>
+    <HasRelation name="nextLogger" source="chainofresponsibilitydemo.AbstractLogger" target="chainofresponsibilitydemo.AbstractLogger" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="chainofresponsibilitydemo.AbstractLogger" target="chainofresponsibilitydemo.AbstractLogger" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="chainofresponsibilitydemo.ConsoleLogger" target="chainofresponsibilitydemo.AbstractLogger"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

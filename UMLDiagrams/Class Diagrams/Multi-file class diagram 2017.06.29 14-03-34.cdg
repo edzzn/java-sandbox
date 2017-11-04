@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="CreacionRegistro" package="Patterns" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombreTabla" type="String" visibility="package"/>
+        <Field name="valoresCampos" type="List&lt;String&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="IdentificarParametros" returnType="void" visibility="protected">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="RealizarOperacion" returnType="void" visibility="protected"/>
+        <Method name="ActualizarMETA" returnType="void" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Class name="CreacionTabla" package="Patterns" visibility="public" xPosition="207.0" yPosition="175.0">
+      <Fields>
+        <Field name="nombreTabla" type="String" visibility="private"/>
+        <Field name="campos" type="ArrayList&lt;String&gt;" visibility="private"/>
+        <Field name="campoClave" type="String" visibility="private"/>
+        <Field name="longitudCampos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="IdentificarParametros" returnType="void" visibility="protected">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="RealizarOperacion" returnType="void" visibility="protected"/>
+        <Method name="ActualizarMETA" returnType="void" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Class name="CreacionTemplate" package="Patterns" visibility="public" isAbstract="true" xPosition="620.0" yPosition="39.0">
+      <Fields>
+        <Field name="fileMETA" type="String" visibility="protected" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="operation" returnType="void" visibility="public" isFinal="true">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="IdentificarParametros" returnType="void" visibility="protected" isAbstract="true">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="RealizarOperacion" returnType="void" visibility="protected" isAbstract="true"/>
+        <Method name="ActualizarMETA" returnType="void" visibility="protected" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="EliminacionRegistro" package="Patterns" visibility="public" xPosition="520.0" yPosition="468.0">
+      <Fields>
+        <Field name="nombreTabla" type="String" visibility="package"/>
+        <Field name="valorCampoClave" type="String" visibility="package"/>
+        <Field name="posicionCampoClave" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="IdentificarParametros" returnType="void" visibility="protected">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="RealizarOperacion" returnType="void" visibility="protected"/>
+        <Method name="ActualizarMETA" returnType="void" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Class name="EliminacionTabla" package="Patterns" visibility="public" xPosition="788.0" yPosition="496.0">
+      <Fields>
+        <Field name="nombreTabla" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="IdentificarParametros" returnType="void" visibility="protected">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="RealizarOperacion" returnType="void" visibility="protected"/>
+        <Method name="ActualizarMETA" returnType="void" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Class name="EliminacionTemplate" package="Patterns" visibility="public" isAbstract="true" xPosition="647.0" yPosition="252.0">
+      <Fields>
+        <Field name="fileMETA" type="String" visibility="protected" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="operation" returnType="void" visibility="public" isFinal="true">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="IdentificarParametros" returnType="void" visibility="protected" isAbstract="true">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="RealizarOperacion" returnType="void" visibility="protected" isAbstract="true"/>
+        <Method name="ActualizarMETA" returnType="void" visibility="protected" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="GestionBDProxy" package="Patterns" visibility="public" xPosition="241.0" yPosition="942.0">
+      <Fields>
+        <Field name="caso" type="int" visibility="package" isStatic="true"/>
+        <Field name="CREARTABLA" type="int" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="MODIFICARTABLA" type="int" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="ELIMINARTABLA" type="int" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="CREARREGISTRO" type="int" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="MODIFICARREGISTRO" type="int" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="ELIMINARREGISTRO" type="int" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="SELECCIONARTABLAS" type="int" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="JOIN" type="int" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="BuscarTabla" returnType="boolean" visibility="private">
+          <Argument type="String" name="nombreTabla"/>
+        </Method>
+        <Method name="Peticion" returnType="void" visibility="public">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GestionBDReal" package="Patterns" visibility="public" xPosition="499.0" yPosition="942.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Peticion" returnType="void" visibility="public">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ModificacionRegistro" package="Patterns" visibility="public" xPosition="1130.0" yPosition="775.0">
+      <Fields>
+        <Field name="nombreTabla" type="String" visibility="package"/>
+        <Field name="campoClave" type="String" visibility="package"/>
+        <Field name="nombreCampo" type="String" visibility="package"/>
+        <Field name="valorCampo" type="String" visibility="package"/>
+        <Field name="posicionCampoClave" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="IdentificarParametros" returnType="void" visibility="protected">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="RealizarOperacion" returnType="void" visibility="protected"/>
+        <Method name="ActualizarMETA" returnType="void" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Class name="ModificacionTabla" package="Patterns" visibility="public" xPosition="1749.0" yPosition="775.0">
+      <Fields>
+        <Field name="nombreTabla" type="String" visibility="package"/>
+        <Field name="nombreCampo" type="String" visibility="package"/>
+        <Field name="nuevoCampo" type="String" visibility="package"/>
+        <Field name="posCampo" type="int" visibility="private"/>
+        <Field name="valCampos" type="ArrayList&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="IdentificarParametros" returnType="void" visibility="protected">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="RealizarOperacion" returnType="void" visibility="protected"/>
+        <Method name="ActualizarMETA" returnType="void" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Class name="ModificacionTemplate" package="Patterns" visibility="public" isAbstract="true" xPosition="1479.0" yPosition="618.0">
+      <Fields>
+        <Field name="fileMETA" type="String" visibility="protected" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="operation" returnType="void" visibility="public" isFinal="true">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="IdentificarParametros" returnType="void" visibility="protected" isAbstract="true">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+        <Method name="RealizarOperacion" returnType="void" visibility="protected" isAbstract="true"/>
+        <Method name="ActualizarMETA" returnType="void" visibility="protected" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="RegistroFactory" package="Patterns" visibility="public" xPosition="1077.0" yPosition="81.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="creacionProceso" returnType="CreacionTemplate" visibility="public"/>
+        <Method name="modificacionProceso" returnType="ModificacionTemplate" visibility="public"/>
+        <Method name="eliminacionProceso" returnType="EliminacionTemplate" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SeleccionarTabla" package="Patterns" visibility="public" xPosition="1029.0" yPosition="908.0">
+      <Fields>
+        <Field name="nombreTabla" type="String" visibility="private" isFinal="true"/>
+        <Field name="nombreCampo" type="String" visibility="private" isFinal="true"/>
+        <Field name="valorCampo" type="String" visibility="private" isFinal="true"/>
+        <Field name="posicion" type="int" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Object[]" name="args"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="Visualizar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TablaFactory" package="Patterns" visibility="public" xPosition="163.0" yPosition="618.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="creacionProceso" returnType="CreacionTemplate" visibility="public"/>
+        <Method name="modificacionProceso" returnType="ModificacionTemplate" visibility="public"/>
+        <Method name="eliminacionProceso" returnType="EliminacionTemplate" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="UnirTablas" package="Patterns" visibility="public" xPosition="20.0" yPosition="820.0">
+      <Fields>
+        <Field name="nombreTabla1" type="String" visibility="private" isFinal="true"/>
+        <Field name="nombreTabla2" type="String" visibility="private" isFinal="true"/>
+        <Field name="nombreCampo" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Object[]" name="args"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCamposTabla" returnType="ArrayList&lt;String&gt;" visibility="private">
+          <Argument type="String" name="nombreTabla"/>
+          <Argument type="int" name="posicionCampo"/>
+        </Method>
+        <Method name="Visualizar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="GestionBD" package="Patterns" visibility="public" xPosition="365.0" yPosition="802.0">
+      <Methods>
+        <Method name="Peticion" returnType="void" visibility="package">
+          <Argument type="Object[]" name="args"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="ProcesosFactory" package="Patterns" visibility="public" xPosition="1190.0" yPosition="573.0">
+      <Methods>
+        <Method name="creacionProceso" returnType="CreacionTemplate" visibility="public"/>
+        <Method name="modificacionProceso" returnType="ModificacionTemplate" visibility="public"/>
+        <Method name="eliminacionProceso" returnType="EliminacionTemplate" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Patterns.RegistroFactory" target="Patterns.EliminacionTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Patterns.EliminacionRegistro" target="Patterns.EliminacionTemplate"/>
+    <IsRelation name="is" source="Patterns.CreacionTabla" target="Patterns.CreacionTemplate"/>
+    <UseRelation source="Patterns.ProcesosFactory" target="Patterns.ModificacionTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Patterns.TablaFactory" target="Patterns.EliminacionTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Patterns.GestionBDProxy" target="Patterns.GestionBD"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Patterns.RegistroFactory" target="Patterns.ProcesosFactory"/>
+    <UseRelation source="Patterns.TablaFactory" target="Patterns.ModificacionTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Patterns.TablaFactory" target="Patterns.ProcesosFactory"/>
+    <IsRelation name="is" source="Patterns.ModificacionTabla" target="Patterns.ModificacionTemplate"/>
+    <UseRelation source="Patterns.ProcesosFactory" target="Patterns.EliminacionTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Patterns.ModificacionRegistro" target="Patterns.ModificacionTemplate"/>
+    <UseRelation source="Patterns.RegistroFactory" target="Patterns.ModificacionTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Patterns.CreacionRegistro" target="Patterns.CreacionTemplate"/>
+    <UseRelation source="Patterns.ProcesosFactory" target="Patterns.CreacionTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Patterns.RegistroFactory" target="Patterns.CreacionTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Patterns.GestionBDReal" target="Patterns.GestionBD"/>
+    <UseRelation source="Patterns.TablaFactory" target="Patterns.CreacionTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Patterns.EliminacionTabla" target="Patterns.EliminacionTemplate"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
